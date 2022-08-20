@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dictionary',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          fontFamily: 'Signika Negative',
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.pink)),
       home: const MainScreen(),
     );
   }
 }
-
