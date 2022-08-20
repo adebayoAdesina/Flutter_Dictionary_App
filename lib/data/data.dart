@@ -16,23 +16,24 @@ class Data {
     var values = jsonDecode(response.body);
     try {
       DictionaryModel dictionaryModel = DictionaryModel(
-          word: values['word'],
-          pronunciation: values['pronunciation'],
-          definitions: (values['definitions'] as List<dynamic>)
-              .map(
-                (e) => DefinitionsModel(
-                    type: e['type'],
-                    definition: e['definition'],
-                    example: e['example'],
-                    imageUrl: e['image_url'],
-                    emoji: e['emoji']),
-              )
-              .toList());
+        word: values['word'],
+        pronunciation: values['pronunciation'],
+        definitions: (values['definitions'] as List<dynamic>)
+            .map(
+              (e) => DefinitionsModel(
+                  type: e['type'],
+                  definition: e['definition'],
+                  example: e['example'],
+                  imageUrl: e['image_url'],
+                  emoji: e['emoji']),
+            )
+            .toList(),
+      );
 
-      fetchedData =dictionaryModel;
-      print(fetchedData.word);
+      fetchedData = dictionaryModel;
     } catch (e) {
-      print(e.toString());
+      String res = e.toString();
+      throw res;
     }
   }
 }

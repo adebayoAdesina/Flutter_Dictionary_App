@@ -35,12 +35,16 @@ class SearchedItemCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(dictionaryModel!.word!),
+                    Text(dictionaryModel!.word != null
+                        ? dictionaryModel!.word!
+                        : ''),
                     const SizedBox(
                       height: 5,
                     ),
                     Text(
-                      '/${dictionaryModel!.pronunciation!}/',
+                      dictionaryModel!.pronunciation != null
+                          ? '/${dictionaryModel!.pronunciation!}/'
+                          : '',
                       style: TextStyle(
                         color: Colors.grey[500],
                         fontSize: 14,

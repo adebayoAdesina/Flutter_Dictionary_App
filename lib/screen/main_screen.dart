@@ -63,6 +63,9 @@ class _MainScreenState extends State<MainScreen> {
             );
           }
           return ModalProgressHUD(
+              color: Colors.pink,
+              progressIndicator: CircularProgressIndicator(
+                  color: Theme.of(context).appBarTheme.backgroundColor),
               inAsyncCall: _isSearching,
               child: SearchedItemCard(dictionaryModel: dictionaryModel));
         },
@@ -75,7 +78,7 @@ class _MainScreenState extends State<MainScreen> {
       centerTitle: true,
       title: const Text(
         'Dictionary',
-        style: TextStyle(fontWeight: FontWeight.w700, letterSpacing: 2),
+        style: TextStyle(fontWeight: FontWeight.w700, letterSpacing: 5.0),
       ),
       bottom: PreferredSize(
           preferredSize: const Size(double.infinity, 48.0),
